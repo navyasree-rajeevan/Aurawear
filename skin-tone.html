@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Tone Selector</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Hamburger Menu -->
+    <div class="hamburger-menu" onclick="toggleSidebar()">&#9776;</div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li>
+                <a href="index.html">
+                    <img src="home logo.jpg" alt="Home" class="menu-logo"> Home
+                </a>
+            </li>
+            <li>
+                <a href="event-chooser.html">
+                    <img src="eventlogo.jpg" alt="Event Chooser" class="menu-logo"> Event Chooser
+                </a>
+            </li>
+            <li>
+                <a href="Dress.html">
+                    <img src="outfit..jpg" alt="Dress" class="menu-logo"> Decide Dress
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- Inspirational Tagline -->
+    <h3 class="tagline">
+        Every skin tone tells its own story, a shade of beauty that the world needs to see.
+    </h3>
+
+
+    <!-- Skin Tone Selector -->
+    <div class="skin-tone-container">
+        <h1>Select Your Skin Tone</h1>
+        <div class="skin-tone-grid">
+            <div class="skin-tone" onclick="selectSkinTone('Fair 1', '#ffe0bd')">
+                <div class="circle" style="background-color: #ffe0bd;"></div>
+                <span>Fair 1</span>
+            </div>
+            <div class="skin-tone" onclick="selectSkinTone('Fair 2', '#fddbb0')">
+                <div class="circle" style="background-color: #fddbb0;"></div>
+                <span>Fair 2</span>
+            </div>
+            <div class="skin-tone" onclick="selectSkinTone('Medium 1', '#d2a679')">
+                <div class="circle" style="background-color: #d2a679;"></div>
+                <span>Medium 1</span>
+            </div>
+            <div class="skin-tone" onclick="selectSkinTone('Medium 2', '#c68642')">
+                <div class="circle" style="background-color: #c68642;"></div>
+                <span>Medium 2</span>
+            </div>
+            <div class="skin-tone" onclick="selectSkinTone('Dark 1', '#8d5524')">
+                <div class="circle" style="background-color: #8d5524;"></div>
+                <span>Dark 1</span>
+            </div>
+            <div class="skin-tone" onclick="selectSkinTone('Dark 2', '#7d4a20')">
+                <div class="circle" style="background-color: #7d4a20;"></div>
+                <span>Dark 2</span>
+            </div>
+            <div class="skin-tone" onclick="selectSkinTone('Dark 3', '#6f3e18')">
+                <div class="circle" style="background-color: #6f3e18;"></div>
+                <span>Dark 3</span>
+            </div>
+            <div class="skin-tone" onclick="selectSkinTone('Dark 4', '#5d2f0e')">
+                <div class="circle" style="background-color: #5d2f0e;"></div>
+                <span>Dark 4</span>
+            </div>
+            <div class="skin-tone" onclick="selectSkinTone('Custom 1', '#4e260c')">
+                <div class="circle" style="background-color: #4e260c;"></div>
+                <span>Custom 1</span>
+            </div>
+            <div class="skin-tone" onclick="selectSkinTone('Custom 2', '#3d1a06')">
+                <div class="circle" style="background-color: #3d1a06;"></div>
+                <span>Custom 2</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Selected Skin Tone -->
+    <div class="selected-tone-container">
+        <h2>Selected Skin Tone</h2>
+        <div id="selected-tone" class="selected-tone">
+            <p>No skin tone selected yet.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
