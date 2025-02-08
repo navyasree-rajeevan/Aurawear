@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Chooser</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Hamburger Menu -->
+    <div class="hamburger-menu" onclick="toggleSidebar()">&#9776;</div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li>
+                <a href="index.html">
+                    <img src="home logo.jpg" alt="Home" class="menu-logo"> Home
+                </a>
+            </li>
+            <li>
+                <a href="skin-tone.html">
+                    <img src="skin-tone-logo.jpg" alt="Skin Tone Selector" class="menu-logo"> Skin Tone Selector
+                </a>
+            </li>
+            <li>
+                <a href="Dress.html">
+                    <img src="outfit..jpg" alt="Dress" class="menu-logo"> Decide Dress
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <h3 class="tagline2">
+        Every event has its story; your outfit should be the perfect chapter.
+    </h3>
+
+    <div class="event-grid">
+        <div class="event-item" data-name="Wedding" onclick="handleEventClick('Wedding', 'wedding.jpg')">
+            <img src="wedding.jpg" alt="Wedding" class="event-image">
+            <p>Wedding</p>
+        </div>
+        <div class="event-item" data-name="Parties" onclick="handleEventClick('Parties', 'parties.jpg')">
+            <img src="parties.jpg" alt="Parties" class="event-image">
+            <p>Parties</p>
+        </div>
+        <div class="event-item" data-name="Professional Events" onclick="handleEventClick('Professional Events', 'professional.jpg')">
+            <img src="proffessional.avif" alt="Professional Events" class="event-image">
+            <p>Professional Events</p>
+        </div>
+        <div class="event-item" data-name="Festivals" onclick="handleEventClick('Festivals', 'festivals.jpg')">
+            <img src="festivals.jpg" alt="Festivals" class="event-image">
+            <p>Festivals</p>
+        </div>
+        <div class="event-item" data-name="Sports" onclick="handleEventClick('Sports', 'sports.jpg')">
+            <img src="sports.jpg" alt="Sports" class="event-image">
+            <p>Sports</p>
+        </div>
+        <div class="event-item" data-name="Birthday" onclick="handleEventClick('Birthday', 'birthday.webp')">
+            <img src="birthday.webp" alt="Birthday" class="event-image">
+            <p>Birthday</p>
+        </div>
+        <div class="event-item" data-name="Date Nights" onclick="handleEventClick('Date Nights', 'date nights.webp')">
+            <img src="date nights.webp" alt="Date Nights" class="event-image">
+            <p>Date Nights</p>
+        </div>
+        <div class="event-item" data-name="Picnic" onclick="handleEventClick('Picnic', 'picnic.jpg')">
+            <img src="picnic.jpg" alt="Picnic" class="event-image">
+            <p>Picnic</p>
+        </div>
+    </div>
+
+    <!-- Custom Event Section -->
+    <div class="custom-event">
+        <h4>Others</h4>
+        <input type="text" id="customEventName" placeholder="Enter your event" />
+        <button id="addCustomEvent">Add Event</button>
+    </div>
+    
+    <!-- Selected Event Display -->
+    <div class="selected-event" id="selectedEvent">
+        <h2>Selected Event:</h2>
+        <div class="selected-content">
+            <p id="eventName"></p>
+            <img id="eventImage" style="display: none;" />
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
