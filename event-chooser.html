@@ -35,6 +35,7 @@
         Every event has its story; your outfit should be the perfect chapter.
     </h3>
 
+    <!-- Event Grid -->
     <div class="event-grid">
         <div class="event-item" data-name="Wedding" onclick="handleEventClick('Wedding', 'wedding.jpg')">
             <img src="wedding.jpg" alt="Wedding" class="event-image">
@@ -76,17 +77,47 @@
         <input type="text" id="customEventName" placeholder="Enter your event" />
         <button id="addCustomEvent">Add Event</button>
     </div>
-    
-    <!-- Selected Event Display -->
-    <div class="selected-event" id="selectedEvent">
-        <h2>Selected Event:</h2>
-        <div class="selected-content">
-            <p id="eventName"></p>
-            <img id="eventImage" style="display: none;" />
-        </div>
-    </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Function to handle event selection
+        function handleEventClick(eventName, eventImage) {
+            // Store the event name and image in sessionStorage
+            sessionStorage.setItem('event', eventName);
+            sessionStorage.setItem('eventImage', eventImage);
+
+            // Redirect to Dress page
+            redirectToDressPage();
+        }
+
+        // Handle custom event input
+        document.getElementById('addCustomEvent').addEventListener('click', () => {
+            const customEvent = document.getElementById('customEventName').value.trim();
+            if (customEvent) {
+                // Store the custom event in sessionStorage
+                sessionStorage.setItem('event', customEvent);
+                sessionStorage.setItem('eventImage', ''); // No image for custom events
+
+                // Redirect to Dress page
+                redirectToDressPage();
+            } else {
+                alert('Please enter a valid event name.');
+            }
+        });
+
+        // Function to redirect to Dress.html with skin tone and event
+        function redirectToDressPage() {
+            const skinTone = sessionStorage.getItem('skinTone');
+            const event = sessionStorage.getItem('event');
+
+            if (!skinTone || !event) {
+                alert('Please select both skin tone and event.');
+                return;
+            }
+
+            // Redirect to Dress.html
+            window.location.href = `Dress.html?skinTone=${encodeURIComponent(skinTone)}&event=${encodeURIComponent(event)}`;
+        }
+    </script>
 </body>
 </html>
 
