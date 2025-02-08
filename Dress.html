@@ -57,7 +57,57 @@
         </div>
         <button class="submit-btn">Submit</button>
     </div>
+    <script>
+        // Function to preview image (optional, based on your design)
+        function previewImage(input, previewId) {
+            const file = input.files[0];
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById(previewId).style.backgroundImage = `url(${e.target.result})`;
+            };
+            reader.readAsDataURL(file);
+        }
 
+        // Function to submit the form and send data to backend (Flask API)
+        function submitForm() {
+            const skinTone = sessionStorage.getItem('skinTone'); // Get skin tone from sessionStorage
+            const event = sessionStorage.getItem('event'); // Get event from sessionStorage
+
+            // Get the dress details and files
+            const dressDetails1 = document.getElementById('dressDetails1').value;
+            const dressDetails2 = document.getElementById('dressDetails2').value;
+            const dressDetails3 = document.getElementById('dressDetails3').value;
+            
+            if (!dressDetails1 || !dressDetails2 || !dressDetails3) {
+                alert("Please provide details for all three dresses.");
+                return;
+            }
+
+            // Send the data to Flask API for Gemini recommendations
+            const data = {
+                skin_tone: skinTone,
+                event: event,
+                dress_descriptions: [dressDetails1, dressDetails2, dressDetails3]
+            };
+
+            fetch('/api/generate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+                // Display the recommended best dress based on Gemini API response
+                alert('Best Dress: ' + result.best_dress);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error in processing request.');
+            });
+        }
+    </script>
 
     <script src="script.js"></script>
 </body>
