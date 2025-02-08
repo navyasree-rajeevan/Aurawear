@@ -62,13 +62,14 @@ function displayUploadedImage() {
 }
 
 // Handle skin tone selection
-function selectSkinTone(tone) {
-    alert(`You selected: ${tone}`);
-}
+// function selectSkinTone(tone) {
+//     console.log(tone);
+//     alert(`You selected: ${tone}`);
+// }
 
 // Navigate to the event chooser page
 function goToEventPage() {
-    window.location.href = "event-chooser.html";
+    window.location.href = `/event-chooser?skin_tone=${encodeURIComponent(tone)}`;
 }
 
 // Function to toggle sidebar visibility
@@ -84,6 +85,7 @@ function selectSkinTone(name, color) {
         <div style="background-color: ${color}; width: 100px; height: 100px; border-radius: 50%; margin: auto;"></div>
         <p>${name}</p>
     `;
+    window.location.href = "/event-chooser";
 }
 
 // Handle Event Click
@@ -193,4 +195,11 @@ document.querySelector('.submit-btn').addEventListener('click', function() {
     document.getElementById('preview2').innerHTML = "Upload Dress 2";
     document.getElementById('preview3').innerHTML = "Upload Dress 3";
 });
+
+const skinTone = sessionStorage.getItem('skinTone');
+if (skinTone) {
+    console.log('Skin tone selected: ', skinTone);
+    document.getElementById('skinToneDisplay').textContent = skinTone;
+}
+
 
