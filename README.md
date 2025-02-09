@@ -1,26 +1,23 @@
-# [Project Name] 🎯
+Project name:AURA WEAR 🎯
 
-
-## Basic Details
-### Team Name: [Name]
-
-
-### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+Team Name: Tinkera
+ 
+ Team Members:
+- Member 1: Krishna A S - SCMS School of Engineering and Technology
+- Member 2: Navyasree Rajeevan - SCMS School of Engineering and Technology
+- Member 3: Nandana M T -  SCMS School of Engineering and Technology
 
 ### Hosted Project Link
 [mention your project hosted project link here]
 
 ### Project Description
-[2-3 lines about what your project does]
+"This project is a web application that helps users choose the most suitable dress based on their skin tone, event type, and provided dress descriptions. Utilizing Python Flask and the Gemini API, it intelligently selects the best dress for the user."
 
 ### The Problem statement
-[What ridiculous problem are you solving?]
+"The challenge is to develop a web application that seamlessly integrates user inputs—skin tone, event type, and dress descriptions— to recommend the most suitable dress using the Gemini API. The goal is to create an intelligent system that enhances user experience by accurately selecting the best dress for each unique combination of inputs."
 
 ### The Solution
-[How are you solving it? Keep it fun!]
+Develop a web application using Python Flask for the backend and HTML/CSS/JavaScript for the frontend. Integrate the Gemini API to analyze user inputs—skin tone, event type, and dress descriptions—and recommend the most suitable dress. Display the selected dress on the results page for the user.
 
 ## Technical Details
 ### Technologies/Components Used
