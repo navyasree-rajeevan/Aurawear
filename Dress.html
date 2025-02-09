@@ -5,38 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lets decide!!!</title>
     <link rel="stylesheet" href="style.css">
+ 
 </head>
 <body>
-    <!-- Hamburger Menu -->
-    <div class="hamburger-menu" onclick="toggleSidebar()">&#9776;</div>
+     <!-- Hamburger Menu -->
+     <div class="hamburger-menu" onclick="toggleSidebar()">&#9776;</div>
 
-    <!-- Sidebar -->
-    <div class="sidebar" id="sidebar">
-        <ul>
-            <li>
-                <a href="index.html">
-                    <img src="home logo.jpg" alt="Home" class="menu-logo"> Home
-                </a>
-            </li>
-            <li>
-                <a href="event-chooser.html">
-                    <img src="eventlogo.jpg" alt="Event Chooser" class="menu-logo"> Event Chooser
-                </a>
-            </li>
-            <li>
-                <a href="skin-tone-logo.jpg">
-                    <img src="skin-tone-logo.jpg" alt="skin-tone" class="menu-logo"> Skin Tone Selector
-                </a>
-            </li>
-        </ul>
-    </div>
-     <!-- Animated Text -->
-     <h3 class="tagline3">
-        "Your perfect outfit is just a click away – let’s bring your vision to life!"
+     <!-- Sidebar -->
+     <div class="sidebar" id="sidebar">
+         <ul>
+             <li>
+                 <a href="index.html">
+                     <img src="home logo.jpg" alt="Home" class="menu-logo"> Home
+                 </a>
+             </li>
+             <li>
+                 <a href="skin-tone.html">
+                     <img src="skin-tone-logo.jpg" alt="Skin Tone Selector" class="menu-logo"> Skin Tone Selector
+                 </a>
+             </li>
+             <li>
+                 <a href="event-chooser.html">
+                     <img src="event-chooser.html" alt="event-chooser" class="menu-logo"> Event
+                 </a>
+             </li>
+         </ul>
+     </div>
+    <h3 class="tagline3">
+        "Your perfect outfit is just a click away – let's bring your vision to life!"
     </h3>
-       <!-- Uploaders Section -->
-       <div class="uploaders-container" id="uploaders">
-        <h3>Upload Your Dresses</h3>
+    
+    <div class="uploaders-container" id="uploaders">
+        <h4>Upload Your Dresses</h4>
         <div class="uploader" id="uploader1">
             <input type="file" id="file1" accept="image/*" onchange="previewImage(this, 'preview1')">
             <div class="preview" id="preview1">Upload Dress 1</div>
@@ -47,68 +47,40 @@
             <input type="file" id="file2" accept="image/*" onchange="previewImage(this, 'preview2')">
             <div class="preview" id="preview2">Upload Dress 2</div>
             <p>please fill</p>
-            <input type="text" id="dressDetails1" class="dress-details" placeholder="Enter dress details">
+            <input type="text" id="dressDetails2" class="dress-details" placeholder="Enter dress details">
         </div>
         <div class="uploader" id="uploader3">
             <input type="file" id="file3" accept="image/*" onchange="previewImage(this, 'preview3')">
             <div class="preview" id="preview3">Upload Dress 3</div>
             <p>please fill</p>
-            <input type="text" id="dressDetails1" class="dress-details" placeholder="Enter dress details">
+            <input type="text" id="dressDetails3" class="dress-details" placeholder="Enter dress details">
         </div>
-        <button class="submit-btn">Submit</button>
+        <button class="submit-btn" onclick="selectRandomDress()">Submit</button>
     </div>
+
     <script>
-        // Function to preview image (optional, based on your design)
         function previewImage(input, previewId) {
             const file = input.files[0];
             const reader = new FileReader();
-            reader.onload = function (e) {
+            reader.onload = function(e) {
                 document.getElementById(previewId).style.backgroundImage = `url(${e.target.result})`;
             };
             reader.readAsDataURL(file);
         }
 
-        // Function to submit the form and send data to backend (Flask API)
-        function submitForm() {
-            const skinTone = sessionStorage.getItem('skinTone'); // Get skin tone from sessionStorage
-            const event = sessionStorage.getItem('event'); // Get event from sessionStorage
-
-            // Get the dress details and files
-            const dressDetails1 = document.getElementById('dressDetails1').value;
-            const dressDetails2 = document.getElementById('dressDetails2').value;
-            const dressDetails3 = document.getElementById('dressDetails3').value;
-            
-            if (!dressDetails1 || !dressDetails2 || !dressDetails3) {
-                alert("Please provide details for all three dresses.");
-                return;
-            }
-
-            // Send the data to Flask API for Gemini recommendations
-            const data = {
-                skin_tone: skinTone,
-                event: event,
-                dress_descriptions: [dressDetails1, dressDetails2, dressDetails3]
-            };
-
-            fetch('/api/generate', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-            .then(response => response.json())
-            .then(result => {
-                // Display the recommended best dress based on Gemini API response
-                alert('Best Dress: ' + result.best_dress);
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('Error in processing request.');
+        function selectRandomDress() {
+            // Remove previous selection
+            document.querySelectorAll('.uploader').forEach(uploader => {
+                uploader.classList.remove('selected');
             });
+
+            // Randomly select a dress (1, 2, or 3)
+            const randomNumber = Math.floor(Math.random() * 3) + 1;
+            const selectedUploader = document.getElementById(`uploader${randomNumber}`);
+            
+            // Add green background to selected dress
+            selectedUploader.classList.add('selected');
         }
     </script>
-
-    <script src="script.js"></script>
 </body>
 </html>

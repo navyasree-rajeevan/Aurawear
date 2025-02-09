@@ -25,6 +25,7 @@ function toggleSidebar() {
     sidebar.classList.toggle("active");
 }
 
+
   // Ensure the uploaders appear only after the logo animation finishes
   window.onload = () => {
     const uploaders = document.getElementById("uploaders");
@@ -201,5 +202,3 @@ if (skinTone) {
     console.log('Skin tone selected: ', skinTone);
     document.getElementById('skinToneDisplay').textContent = skinTone;
 }
-
-
