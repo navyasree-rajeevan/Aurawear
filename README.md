@@ -76,11 +76,96 @@ Backend (Flask): The Flask backend handles routes for selecting skin tone, choos
 For Hardware:
 
 # Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
+flowchart LR
+    subgraph User
+        U1[Home Page] --> U2[Skin Tone Selector]
+        U2 --> U3[Event Chooser]
+        U3 --> U4[Dress Page]
+        U4 --> U5[Result Page]
+    end
 
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
+    subgraph Backend
+        B1[/select_skin_tone] --> B2[/select_event]
+        B2 --> B3[/submit_dress_description]
+        B3 --> B4[Call Gemini API]
+        B4 --> B5[Process API Response]
+    end
+
+    subgraph Gemini_API
+        B4 --> GA1[Gemini API Endpoint]
+    end
+
+    U5 --> |Displays Recommended Dress| U6[User]
+    U4 --> B3
+    GA1 --> B5
+    B5 --> U5
+    B1 --> U2
+    B2 --> U3
+    B3 --> U4
+
+User Interaction:
+
+Home Page: The user starts here.
+
+Skin Tone Selector: The user selects their skin tone.
+
+Event Chooser: The user chooses the event.
+
+Dress Page: The user uploads dress descriptions.
+
+Result Page: The user sees the recommended dress.
+
+Backend (Flask):
+
+/select_skin_tone: Handles skin tone selection.
+
+/select_event: Handles event selection.
+
+/submit_dress_description: Processes dress descriptions and calls Gemini API.
+
+Call Gemini API: Communicates with the Gemini API for recommendations.
+
+Process API Response: Processes the response from the API and sends it back to the frontend.
+
+Gemini API:
+
+Gemini API Endpoint: The external API that provides the dress recommendation
+
+graph TD;
+    subgraph Frontend (Client)
+        A[Home Page] --> B[Skin Tone Selector]
+        B --> C[Event Chooser]
+        C --> D[Dress Page]
+        D --> E[Result Page]
+    end
+
+    subgraph Backend (Flask)
+        H[/select_skin_tone] --> I[/select_event]
+        I --> J[/submit_dress_description]
+        J --> K[Call Gemini API]
+        K --> L[Process API Response]
+    end
+
+    subgraph Gemini API (External)
+        K --> M[Gemini API Endpoint]
+    end
+
+    E -->|Displays Recommended Dress| N[User]
+
+    D --> J
+    M --> L
+    L --> E
+    H --> B
+    I --> C
+    J --> D
+
+Frontend (Client): The user navigates through the Home Page, Skin Tone Selector, Event Chooser, Dress Page, and Result Page.
+
+Backend (Flask): The Flask backend routes handle the selection of skin tone, event, and submission of dress descriptions, and it calls the Gemini API.
+
+Gemini API (External): The backend sends data to the Gemini API, which processes the request and returns the recommended dress.
+
+User: The recommended dress is displayed to the user on the Result Page.
 
 # Build Photos
 ![Team](Add photo of your team here)
