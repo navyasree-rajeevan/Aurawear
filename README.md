@@ -26,27 +26,20 @@ For Software:
 - Python Flask,HTML/CSS/JavaScript
 - Chatgpt,Copilot,Perplexity,DeepSeek
 
-
-### Implementation
-For Software:
-# Installation
-[commands]
-
-# Run
-[commands]
-
 ### Project Documentation
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+![WhatsApp Image 2025-02-09 at 10 25 40_aa0f7d88](https://github.com/user-attachments/assets/6334ead5-72be-49ec-a5ab-18ee6e4c52bd)
+The page to select skin tone
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+![WhatsApp Image 2025-02-09 at 10 25 52_d8b00e0f](https://github.com/user-attachments/assets/b6bb6183-ab34-45f2-9d92-6eb384936c56)
+The page to select event
+
+![WhatsApp Image 2025-02-09 at 10 25 52_2d03aca9](https://github.com/user-attachments/assets/c4d66a0e-f71d-4447-9360-d7d0d6b866d5)
+The page where output is displayed
+
 
 # Diagrams
 +-------------------------+               +------------------------+
@@ -168,30 +161,33 @@ Gemini API (External): The backend sends data to the Gemini API, which processes
 User: The recommended dress is displayed to the user on the Result Page.
 
 # Build Photos
-![Team](Add photo of your team here)
+![WhatsApp Image 2025-02-09 at 10 27 20_0c52da7b](https://github.com/user-attachments/assets/8af18337-8b31-4b9a-aa39-ee0c6a9d06db)
 
 
-![Components](Add photo of your components here)
-*List out all components shown*
 
-![Build](Add photos of build process here)
-*Explain the build steps*
+![WhatsApp Image 2025-02-09 at 10 25 21_fb101ee3](https://github.com/user-attachments/assets/bc56fa90-59b6-45c2-858c-185b620d213f)
+![WhatsApp Image 2025-02-09 at 10 25 40_2d7bab5c](https://github.com/user-attachments/assets/e8955395-e43b-4c3a-9302-ed268a9bcc0d)
+![WhatsApp Image 2025-02-09 at 10 25 52_996dee2f](https://github.com/user-attachments/assets/21455510-c8b3-4698-848b-e86ed254df4f)
+![WhatsApp Image 2025-02-09 at 10 25 52_2bad4bc0](https://github.com/user-attachments/assets/ae0d595f-7ff2-4430-a23e-f19b53a476c4)
 
-![Final](Add photo of final product here)
-*Explain the final build*
+
+
+
+
+![WhatsApp Image 2025-02-09 at 10 35 57_60c73cd9](https://github.com/user-attachments/assets/12864d11-0a54-4dfc-be7e-55cfd4c57107)
+
+
+![WhatsApp Image 2025-02-09 at 10 25 52_0f892c44](https://github.com/user-attachments/assets/5675af0f-2822-474e-a69f-32beba7eccc1)
+
 
 ### Project Demo
 # Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
-
-# Additional Demos
-[Add any extra demo materials/links]
+https://drive.google.com/file/d/1h5gwad9rkpS3aOXBvEOpJsYyThOFWn6Y/view?usp=drivesdk
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+- Krishna A S:Front end-HTML CSS
+- Nandana M T:Resource collection,routing
+- Navyasree Rajeevan:Java Script
 
 ---
 Made with ❤️ at TinkerHub
