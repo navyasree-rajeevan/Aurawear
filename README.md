@@ -23,14 +23,9 @@ Develop a web application using Python Flask for the backend and HTML/CSS/JavaSc
 ### Technologies/Components Used
 For Software:
 - HTML,CSS,Java Script,Python
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+- Python Flask,HTML/CSS/JavaScript
+- Chatgpt,Copilot,Perplexity,DeepSeek
 
-For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
 
 ### Implementation
 For Software:
@@ -54,8 +49,29 @@ For Software:
 *Add caption explaining what this shows*
 
 # Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
++-------------------------+               +------------------------+
+|      Frontend (Client)   |               |      Backend (Flask)    |
+|                         | <------------->|                        |
+|   1. Home Page           |               | 1. /select_skin_tone    |
+|   2. Skin Tone Selector  |               | 2. /select_event        |
+|   3. Event Chooser       |               | 3. /submit_dress_description  |
+|   4. Dress Page          |               | 4. Call Gemini API      |
+|   5. Result Page         |               |                        |
++-------------------------+               +------------------------+
+               |                                   |
+               |                                   v
+               |                          +---------------------+
+               |                          |  Gemini API (External)|
+               |                          +---------------------+
+               |                           - Input: Dress data, skin tone, event
+               |                           - Output: Recommended dress
+               |                                      |
+               v                                      v
+            (Result Display to User)
+
+Frontend (Client): The user interacts with various pages, including the Home Page, Skin Tone Selector, Event Chooser, Dress Page, and Result Page. The frontend collects user inputs and communicates with the backend.
+
+Backend (Flask): The Flask backend handles routes for selecting skin tone, choosing events, and submitting dress descriptions. It processes user inputs, calls the Gemini API, and returns the recommended dress to the frontend.
 
 For Hardware:
 
