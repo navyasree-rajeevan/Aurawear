@@ -22,7 +22,7 @@ Develop a web application using Python Flask for the backend and HTML/CSS/JavaSc
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
+- HTML,CSS,Java Script,Python
 - [Frameworks used]
 - [Libraries used]
 - [Tools used]
