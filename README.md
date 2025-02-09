@@ -8,7 +8,7 @@ Team Name: Tinkera
 - Member 3: Nandana M T -  SCMS School of Engineering and Technology
 
 ### Hosted Project Link
-[mention your project hosted project link here]
+https://famous-banoffee-4b2a93.netlify.app/
 
 ### Project Description
 "This project is a web application that helps users choose the most suitable dress based on their skin tone, event type, and provided dress descriptions. Utilizing Python Flask and the Gemini API, it intelligently selects the best dress for the user."
